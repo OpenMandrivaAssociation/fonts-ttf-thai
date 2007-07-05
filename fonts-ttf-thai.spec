@@ -1,7 +1,7 @@
 Summary:	Free Thai TrueType fonts
 Name:		fonts-ttf-thai
 Version:	0.1
-Release:	%mkrel 11
+Release:	%mkrel 12
 License:	Distributable
 Group:		System/Fonts/True type
 
@@ -13,8 +13,6 @@ BuildRequires:	freetype-tools
 
 Obsoletes:	thai-ttf
 Provides:	thai-ttf
-Requires(post):		chkfontpath
-Requires(postun):	chkfontpath
 Requires(post): fontconfig
 Requires(postun): fontconfig
 
@@ -39,15 +37,17 @@ cd %buildroot/%_datadir/fonts/TTF/thai/
 cp fonts.scale fonts.dir
 )
 
+mkdir -p %{buildroot}%_sysconfdir/X11/fontpath.d/
+ln -s ../../..%_datadir/fonts/TTF/thai \
+    %{buildroot}%_sysconfdir/X11/fontpath.d/ttf-thai:pri=50
+
+
 %post
-[ -x %_sbindir/chkfontpath ] && %_sbindir/chkfontpath -q -a %_datadir/fonts/TTF/thai
 [ -x %_bindir/fc-cache ] && %{_bindir}/fc-cache 
 
 %postun
 # 0 means a real uninstall
 if [ "$1" = "0" ]; then
-   [ -x %_sbindir/chkfontpath ] && \
-   %_sbindir/chkfontpath -q -r %_datadir/fonts/TTF/thai
    [ -x %_bindir/fc-cache ] && %{_bindir}/fc-cache 
 fi
 
@@ -61,6 +61,5 @@ rm -fr %buildroot
 %dir %_datadir/fonts/TTF/
 %dir %_datadir/fonts/TTF/thai/
 %_datadir/fonts/TTF/thai/*
-
-
+%_sysconfdir/X11/fontpath.d/ttf-thai:pri=50
 
