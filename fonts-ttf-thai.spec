@@ -8,7 +8,6 @@ Group:		System/Fonts/True type
 Source0:	fonts-ttf-thai-norasi.tar.bz2
 
 BuildArch:	noarch
-BuildRoot:	%_tmppath/%name-%version-%release-root
 BuildRequires:	freetype-tools
 
 Obsoletes:	thai-ttf
