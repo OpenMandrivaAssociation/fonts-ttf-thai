@@ -1,12 +1,12 @@
 Summary:	Free Thai TrueType fonts
 Name:		fonts-ttf-thai
-Version:	0.1
-Release:	%mkrel 13
+Version:	0.4.9
+Release:	%mkrel 1
 License:	Distributable
 Group:		System/Fonts/True type
 
-Source0:	fonts-ttf-thai-norasi.tar.bz2
-
+Source0:	ftp://linux.thai.net/pub/ThaiLinux/software/thai-ttf/thai-ttf-%{version}.tar.gz
+URL:		http://linux.thai.net/projects/thaifonts-scalable
 BuildArch:	noarch
 BuildRoot:	%_tmppath/%name-%version-%release-root
 BuildRequires:	freetype-tools
@@ -21,7 +21,7 @@ This Package provides Free Thai TrueType fonts.
 
 %prep
 
-%setup -q -c
+%setup -q -n thai-ttf-%{version}
 
 %build
 
@@ -56,8 +56,6 @@ rm -fr %buildroot
 
 %files
 %defattr(0644,root,root,0755)
-%doc README
-#
 %dir %_datadir/fonts/TTF/
 %dir %_datadir/fonts/TTF/thai/
 %_datadir/fonts/TTF/thai/*
