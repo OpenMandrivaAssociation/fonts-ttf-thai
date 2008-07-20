@@ -1,7 +1,7 @@
 Summary:	Thai TrueType fonts
 Name:		fonts-ttf-thai
-Version:	0.4.9
-Release:	%mkrel 3
+Version:	0.4.10
+Release:	%mkrel 1
 License:	Distributable
 Group:		System/Fonts/True type
 
