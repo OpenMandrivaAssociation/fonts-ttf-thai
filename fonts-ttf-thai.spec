@@ -1,6 +1,6 @@
 Summary:	Thai TrueType fonts
 Name:		fonts-ttf-thai
-Version:	0.4.11
+Version:	0.4.13
 Release:	%mkrel 1
 # Waree font is licensed under Bitstream license
 License:	GPLv2+ and Bitstream Vera Fonts Copyright
