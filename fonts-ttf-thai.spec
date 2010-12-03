@@ -10,8 +10,7 @@ Source0:	ftp://linux.thai.net/pub/ThaiLinux/software/thai-ttf/thai-ttf-%{version
 URL:		http://linux.thai.net/projects/thaifonts-scalable
 BuildArch:	noarch
 BuildRoot:	%_tmppath/%name-%version-%release-root
-BuildRequires:	freetype-tools
-
+BuildRequires:	ttmkfdir
 Obsoletes:	thai-ttf
 Provides:	thai-ttf
 
@@ -21,8 +20,6 @@ This Package provides Free Thai TrueType fonts.
 %prep
 %setup -q -n thai-ttf-%{version}
 
-%build
-
 %install
 rm -fr %buildroot
 
@@ -31,7 +28,7 @@ cp *.ttf %buildroot/%_datadir/fonts/TTF/thai/
 
 (
 cd %buildroot/%_datadir/fonts/TTF/thai/
-%_sbindir/ttmkfdir -u > fonts.scale
+%_bindir/ttmkfdir -u > fonts.scale
 cp fonts.scale fonts.dir
 )
 
