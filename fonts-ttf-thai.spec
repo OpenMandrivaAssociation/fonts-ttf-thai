@@ -9,6 +9,7 @@ Group:		System/Fonts/True type
 Source0:	ftp://linux.thai.net/pub/ThaiLinux/software/thai-ttf/thai-ttf-%{version}.tar.gz
 URL:		http://linux.thai.net/projects/thaifonts-scalable
 BuildArch:	noarch
+BuildRequires: fontconfig
 BuildRoot:	%_tmppath/%name-%version-%release-root
 BuildRequires:	ttmkfdir
 Obsoletes:	thai-ttf
