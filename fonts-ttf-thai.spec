@@ -5,7 +5,7 @@ Release:	11
 # Waree font is licensed under Bitstream license
 License:	GPLv2+ and Bitstream Vera Fonts Copyright
 Group:		System/Fonts/True type
-Url:		http://linux.thai.net/projects/thaifonts-scalable
+Url:		https://linux.thai.net/projects/thaifonts-scalable
 Source0:	ftp://linux.thai.net/pub/ThaiLinux/software/thai-ttf/thai-ttf-%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	fontconfig
